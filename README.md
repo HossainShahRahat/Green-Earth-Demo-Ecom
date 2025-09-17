@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-Of course. Here is a comprehensive `README.md` file that documents your "Green Earth" project.
-
-You can create a new file named `README.md` in the root of your project folder and paste the content below into it.
-
------
-
 # Green Earth E-Commerce Platform
 
 Welcome to the Green Earth project, a modern, fully responsive e-commerce front-end for a fictional plant nursery. This project allows users to browse different types of trees, add them to a shopping cart, and proceed through a checkout and confirmation flow. It is built with vanilla HTML, CSS, and JavaScript, focusing on a clean user interface and a great mobile-first experience.
