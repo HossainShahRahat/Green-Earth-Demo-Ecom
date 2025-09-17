@@ -30,11 +30,23 @@ document.addEventListener('DOMContentLoaded', () => {
     toastNotification.classList.add("toast-notification");
     document.body.appendChild(toastNotification);
 
-
     let cart = [];
     let currentPlants = [];
 
-    // --- NEW: Functions to manage cart data in sessionStorage ---
+    // --- NEW: Helper functions for opening and closing modals ---
+    function openModal(modal) {
+        if (!modal) return;
+        modal.style.display = 'flex';
+        document.body.classList.add('modal-open');
+    }
+
+    function closeModal(modal) {
+        if (!modal) return;
+        modal.style.display = 'none';
+        document.body.classList.remove('modal-open');
+    }
+
+    // --- Functions to manage cart data in sessionStorage ---
     function saveCartToSession() {
         sessionStorage.setItem('shoppingCart', JSON.stringify(cart));
     }
@@ -47,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- INITIALIZATION ---
-    loadCartFromSession(); // Load cart from session first
+    loadCartFromSession();
     loadPlants();
     loadAndDisplayCategories();
     updateCartDisplay();
@@ -87,14 +99,24 @@ document.addEventListener('DOMContentLoaded', () => {
             removeFromCart(plantId);
         }
     });
+    
+    // NEW: Listener for the "Add to Cart" button inside the plant details modal
+    plantModalBody.addEventListener('click', (event) => {
+        if (event.target.classList.contains('add-to-cart-modal-btn')) {
+            const plantId = event.target.dataset.plantId;
+            addToCart(plantId);
+            closeModal(plantModal); // Use the new close function
+        }
+    });
 
-    navCart.addEventListener("click", () => cartModal.style.display = "flex");
-    closeCartModalBtn.addEventListener("click", () => cartModal.style.display = "none");
-    closePlantModalBtn.addEventListener("click", () => plantModal.style.display = "none");
+    // UPDATED: Modal event listeners now use helper functions
+    navCart.addEventListener("click", () => openModal(cartModal));
+    closeCartModalBtn.addEventListener("click", () => closeModal(cartModal));
+    closePlantModalBtn.addEventListener("click", () => closeModal(plantModal));
 
     window.addEventListener("click", (event) => {
-        if (event.target === plantModal) plantModal.style.display = "none";
-        if (event.target === cartModal) cartModal.style.display = "none";
+        if (event.target === plantModal) closeModal(plantModal);
+        if (event.target === cartModal) closeModal(cartModal);
     });
 
     // --- Sidebar Navigation Event Listeners ---
@@ -107,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
         sidebarCartBtn.addEventListener('click', (e) => {
             e.preventDefault();
             closeSidebar();
-            setTimeout(() => { cartModal.style.display = 'flex'; }, 300);
+            setTimeout(() => { openModal(cartModal); }, 300); // UPDATED
         });
     }
     document.addEventListener('click', (event) => {
@@ -235,6 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return cardDiv;
     }
 
+    // UPDATED: Now includes an "Add to Cart" button
     function displayPlantModal(plant) {
         plantModalBody.innerHTML = `
             <img src="${plant.image}" alt="${plant.name}">
@@ -242,8 +265,9 @@ document.addEventListener('DOMContentLoaded', () => {
             <p>${plant.description}</p>
             <p><strong>Category:</strong> ${plant.category}</p>
             <div class="price">Price: ৳${plant.price}</div>
+            <button class="add-btn add-to-cart-modal-btn" data-plant-id="${plant.id}" style="margin-top: 1rem;">Add to Cart</button>
         `;
-        plantModal.style.display = "flex";
+        openModal(plantModal);
     };
 
     function handleCategorySelection(selectedLi) {
@@ -271,7 +295,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             cart.push({ ...plantToAdd, quantity: 1 });
         }
-        saveCartToSession(); // Save cart after adding
+        saveCartToSession();
         updateCartDisplay();
         showToast(`Added "${plantToAdd.name}" to cart!`);
     }
@@ -283,7 +307,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (userConfirmed) {
                 cart = cart.filter(item => item.id != plantId);
-                saveCartToSession(); // Save cart after removing
+                saveCartToSession();
                 updateCartDisplay();
                 showToast(`Removed "${itemToRemove.name}" from cart.`);
             }
@@ -297,7 +321,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (cartItem.quantity <= 0) {
                 removeFromCart(plantId);
             } else {
-                saveCartToSession(); // Save cart after changing quantity
+                saveCartToSession();
                 updateCartDisplay();
             }
         }

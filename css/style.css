@@ -11,6 +11,10 @@ body {
     /* Sets the base for 1rem = 16px */
 }
 
+body.modal-open {
+    overflow-y: hidden;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -565,10 +569,11 @@ footer {
 
 #modal-body img {
     width: 100%;
-    max-width: 400px;
-    height: auto;
+    max-width: 41rem;
     border-radius: 0.5rem;
     /* 8px */
+    height: 21.25rem;
+    object-fit:cover;
     margin-bottom: 1rem;
 }
 
@@ -923,3 +928,4 @@ footer {
     height: 2.75rem;
     border-radius: 999px;
 }
+
