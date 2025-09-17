@@ -1,0 +1,925 @@
+/* =================================================================== */
+/* GENERAL & BODY STYLES                                               */
+/* =================================================================== */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f0fdf4;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    /* Sets the base for 1rem = 16px */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+
+/* =================================================================== */
+/* NAVIGATION BAR                                                      */
+/* =================================================================== */
+
+nav {
+    background-color: #15803d;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    padding: 0 2rem;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.875rem 0.625rem;
+    /* 14px 10px */
+    display: block;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* --- Navigation Cart Icon --- */
+
+.cart-icon-container {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    /* 40px */
+    height: 2.5rem;
+    /* 40px */
+    border-radius: 50%;
+}
+
+.cart-icon-container .fa-cart-shopping {
+    font-size: 1.25rem;
+    /* 20px */
+    color: white;
+}
+
+#cart-count-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #ef4444;
+    color: white;
+    border-radius: 50%;
+    width: 1.375rem;
+    /* 22px */
+    height: 1.375rem;
+    /* 22px */
+    font-size: 0.875rem;
+    /* 14px */
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(25%, -25%);
+}
+
+
+/* =================================================================== */
+/* BUTTON STYLES                                                       */
+/* =================================================================== */
+
+/* Generic button for banner */
+.button-type-1 button {
+    background-color: #facc15;
+    color: #15803d;
+    border: none;
+    padding: 0.625rem 1.25rem;
+    /* 10px 20px */
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 1rem;
+    /* 16px */
+}
+
+.button-type-1 button:hover {
+    opacity: 0.9;
+}
+
+
+/* =================================================================== */
+/* HEADER & BANNER SECTION                                             */
+/* =================================================================== */
+
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #cff0dc;
+    max-height: 24rem;
+    /* 383px */
+}
+
+.banner-left-image {
+    width: 34.125rem;
+    /* 546px */
+    height: auto;
+    margin-right: 1.25rem;
+    /* 20px */
+}
+
+.banner-right-image {
+    width: 34.125rem;
+    /* 546px */
+    height: auto;
+    margin-left: 1.25rem;
+    /* 20px */
+}
+
+.banner-content {
+    text-align: center;
+    background-color: #cff0dc;
+}
+
+.banner-content h1 {
+    font-size: 3rem;
+    /* 48px */
+    margin-bottom: 1.25rem;
+    /* 20px */
+    color: #1f2937;
+}
+
+.banner-content p {
+    font-size: 1.25rem;
+    /* 20px */
+    margin-bottom: 1.875rem;
+    /* 30px */
+    color: #425158;
+}
+
+.banner-content .button-type-1 button {
+    font-size: 1.125rem;
+    /* 18px */
+    padding: 0.75rem 1.875rem;
+    /* 12px 30px */
+    margin: 0 auto;
+}
+
+
+/* =================================================================== */
+/* "CHOOSE YOUR TREES" SECTION                                         */
+/* =================================================================== */
+
+.Choose-Your-Trees-Section {
+    display: flex;
+    padding: 2rem;
+    gap: 2rem;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* --- Left Column: Category List --- */
+
+.Tree-Section-Container-Left {
+    width: 15.625rem;
+    /* 250px */
+    flex-shrink: 0;
+}
+
+.Tree-Section-Container-Left h2 {
+    font-size: 1.25rem;
+    /* 20px */
+    margin-bottom: 1rem;
+    color: #111827;
+}
+
+.Tree-Section-Container-Left ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.Tree-Section-Container-Left li {
+    padding: 0.75rem 1.25rem;
+    /* 12px 20px */
+    border-radius: 0.5rem;
+    /* 8px */
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s, color 0.2s;
+    color: #374151;
+}
+
+.Tree-Section-Container-Left li:hover {
+    background-color: #dcfce7;
+}
+
+.Tree-Section-Container-Left li.selected {
+    background-color: #166534;
+    color: white;
+}
+
+/* --- Center Column: Plant Cards --- */
+
+.Tree-Section-Container-Body {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    flex: 1;
+    /* This is the fix for the shrinking container */
+}
+
+.card {
+    height: fit-content;
+    background-color: white;
+    border-radius: 1rem;
+    /* 16px */
+    border: 1px solid #e5e7eb;
+    padding: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex-direction: column;
+}
+
+.card .image-container {
+    border-radius: 0.5rem;
+    /* 8px */
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.card .image-container img {
+    height: 11.25rem;
+    /* 180px */
+    object-fit: cover;
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .image-container img {
+    transform: scale(1.05);
+}
+
+.card h3 {
+    font-size: 1.125rem;
+    /* 18px */
+    color: #1f2937;
+    font-weight: bold;
+    margin: 0 0 0.5rem 0;
+}
+
+.card p {
+    font-size: 0.875rem;
+    /* 14px */
+    color: #6b7280;
+    line-height: 1.5;
+    margin: 0 0 1rem 0;
+    flex-grow: 1;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.category-tag {
+    background-color: #dcfce7;
+    color: #166534;
+    padding: 0.25rem 0.75rem;
+    /* 4px 12px */
+    border-radius: 999px;
+    font-size: 0.75rem;
+    /* 12px */
+    font-weight: 500;
+}
+
+.price {
+    font-size: 1.125rem;
+    /* 18px */
+    font-weight: bold;
+    color: #111827;
+}
+
+.add-btn {
+    width: 100%;
+    background-color: #166534;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    /* 12px */
+    font-size: 1rem;
+    /* 16px */
+    font-weight: bold;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.add-btn:hover {
+    background-color: #14532d;
+}
+
+
+/* =================================================================== */
+/* "ABOUT THE CAMPAIGN" SECTION                                        */
+/* =================================================================== */
+
+.About-Campaign {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 1rem;
+    /* 16px */
+}
+
+.About-Campaign-Container-Right {
+    padding-left: 1.625rem;
+    /* 26px */
+}
+
+.About-Campaign-Container-Right p,
+.About-Campaign-Container-Right ul li {
+    color: #49545d;
+}
+
+
+/* =================================================================== */
+/* "OUR IMPACT" SECTION                                                */
+/* =================================================================== */
+
+.Our-Impact-Section {
+    background-color: #cff0dc;
+    padding: 2.5rem 0;
+    /* 40px */
+    text-align: center;
+    /* Center the heading */
+}
+
+.Our-Impact-Section h1 {
+    /* Added style for the main heading */
+    font-size: 2.5rem;
+    /* ~40px */
+    color: #1f2937;
+    margin-bottom: 2rem;
+    /* 32px */
+}
+
+.Our-Impact-Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1090px;
+    /* Kept px here as it's a max-width for the container */
+    margin: 0 auto;
+    padding: 0 1rem;
+    /* Add some horizontal padding for smaller screens */
+    flex-wrap: wrap;
+    /* Allow boxes to wrap on smaller screens */
+}
+
+.Our-Impact-Box {
+    text-align: center;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    /* 8px */
+    padding: 2rem 1.5rem;
+    /* Increased padding to make the box larger */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 1rem;
+    /* 16px */
+    width: 16rem;
+    /* Adjusted width, roughly 256px to match image visually */
+    height: 9.375rem;
+    /* Adjusted height, roughly 150px to match image visually */
+    background-color: white;
+    display: flex;
+    /* Use flex to center content vertically */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    /* Include padding and border in the width/height */
+    transition: transform 0.3s ease-in-out;
+    /* Added for smooth animation */
+}
+
+/* New: Zoom animation on hover */
+.Our-Impact-Box:hover {
+    transform: scale(1.05);
+    /* Slightly enlarge the box */
+}
+
+.Our-Impact-Box h2 {
+    color: #166534;
+    /* Darker green for emphasis */
+    font-size: 2.5rem;
+    /* Larger font for the number */
+    margin-bottom: 0.5rem;
+    /* Space between number and description */
+    margin-top: 0;
+}
+
+.Our-Impact-Box p {
+    color: #4c545f;
+    font-size: 1.125rem;
+    /* Slightly larger description */
+    margin: 0;
+    /* Remove default paragraph margin */
+}
+
+
+/* =================================================================== */
+/* "PLANT A TREE" FORM SECTION                                         */
+/* =================================================================== */
+
+.Plant-a-Tree-Today-Section {
+    background-color: #166534;
+    padding: 2.5rem 0;
+    /* 40px */
+}
+
+.Plant-a-Tree-Today-Form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    background-color: #1e8449;
+    border-radius: 1rem;
+    /* 16px */
+    padding: 2rem 4rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    width: 40.625rem;
+    /* 650px */
+    box-sizing: border-box;
+}
+
+.Plant-a-Tree-Today-Form input,
+.Plant-a-Tree-Today-Form select {
+    width: 100%;
+    padding: 0.75rem;
+    /* 12px */
+    margin: 0.5rem 0;
+    /* 8px */
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    /* 4px */
+    box-sizing: border-box;
+}
+
+.Plant-a-Tree-Today-Form button {
+    background-color: #facc15;
+    color: #15803d;
+    border: none;
+    padding: 0.75rem;
+    /* 12px */
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 1rem;
+    /* 16px */
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+
+/* =================================================================== */
+/* FOOTER                                                              */
+/* =================================================================== */
+
+footer {
+    background-color: #14532d;
+    color: white;
+    text-align: center;
+    padding: 0.4375rem 0;
+    /* 7px */
+}
+
+
+/* =================================================================== */
+/* MODAL (POPUP) STYLES                                                */
+/* =================================================================== */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- Plant Details Modal --- */
+.modal-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 1.25rem;
+    /* 20px */
+    border-radius: 0.625rem;
+    /* 10px */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    animation: fadeIn 0.3s;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 1.75rem;
+    /* 28px */
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#modal-body img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 0.5rem;
+    /* 8px */
+    margin-bottom: 1rem;
+}
+
+#modal-body h2 {
+    margin: 0.5rem 0;
+}
+
+#modal-body p {
+    margin: 0.5rem 0;
+}
+
+#modal-body .price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4CAF50;
+    margin-top: 1rem;
+}
+
+/* =================================================================== */
+/* TOAST NOTIFICATION STYLES                                           */
+/* =================================================================== */
+
+.toast-notification {
+    position: fixed;
+    top: 5rem;
+    /* Position below the navbar */
+    right: 2rem;
+    /* Position from the right edge */
+    transform: translateX(120%);
+    /* Start off-screen to the right */
+    background-color: #166534;
+    color: white;
+    padding: 0.875rem 1.5rem;
+    border-radius: 999px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    font-size: 1.125rem;
+    font-weight: 500;
+    z-index: 2000;
+    opacity: 0;
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.toast-notification.show {
+    opacity: 1;
+    transform: translateX(0);
+    /* Slide into view */
+}
+
+/* Optional: Slight upward slide animation for better effect */
+.toast-notification.slide-in {
+    transform: translate(-50%, -40%);
+    /* Starts slightly lower */
+}
+
+/* =================================================================== */
+/* SHOPPING CART MODAL STYLES                                          */
+/* =================================================================== */
+
+.cart-modal-content {
+    background-color: white;
+    width: 90%;
+    max-width: 550px;
+    border-radius: 0.75rem;
+    /* 12px */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: fadeIn 0.3s;
+}
+
+.cart-modal-header {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    /* 16px 24px */
+    background-color: #166534;
+    color: white;
+}
+
+.cart-modal-header .fa-cart-shopping {
+    font-size: 1.5rem;
+    /* 24px */
+    margin-right: 0.75rem;
+    /* 12px */
+}
+
+.cart-modal-header h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    /* 20px */
+    flex-grow: 1;
+}
+
+.cart-modal-body {
+    padding: 1rem 1.5rem;
+    max-height: 25rem;
+    /* 400px */
+    overflow-y: auto;
+}
+
+.dynamic-cart-item {
+    display: flex;
+    align-items: center;
+    background-color: #f0fdf4;
+    border-radius: 0.5rem;
+    /* 8px */
+    padding: 0.75rem;
+    /* 12px */
+    margin-bottom: 0.75rem;
+}
+
+.cart-item-image img {
+    width: 3.75rem;
+    /* 60px */
+    height: 3.75rem;
+    border-radius: 0.375rem;
+    /* 6px */
+    margin-right: 1rem;
+    object-fit: cover;
+}
+
+.cart-item-info {
+    flex-grow: 1;
+}
+
+.cart-item-info .item-name {
+    margin: 0;
+    font-weight: bold;
+    font-size: 1rem;
+    /* 16px */
+}
+
+.cart-item-info .item-price {
+    margin: 0.25rem 0 0;
+    color: #15803d;
+    font-size: 0.875rem;
+    /* 14px */
+}
+
+.quantity-adjuster {
+    display: flex;
+    align-items: center;
+    margin: 0 1rem;
+}
+
+.quantity-adjuster .quantity-btn {
+    width: 1.75rem;
+    /* 28px */
+    height: 1.75rem;
+    border: none;
+    background-color: #15803d;
+    color: white;
+    border-radius: 50%;
+    font-size: 1.125rem;
+    /* 18px */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quantity-adjuster .quantity-display {
+    margin: 0 0.75rem;
+    /* 12px */
+    font-size: 1rem;
+    /* 16px */
+    font-weight: bold;
+    min-width: 1.25rem;
+    /* 20px */
+    text-align: center;
+}
+
+.remove-btn {
+    background-color: #ef4444;
+    color: white;
+    border: none;
+    border-radius: 0.375rem;
+    /* 6px */
+    padding: 0.5rem 1rem;
+    /* 8px 16px */
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.remove-btn:hover {
+    background-color: #dc2626;
+}
+
+.cart-modal-footer {
+    padding: 1rem 1.5rem;
+    /* 16px 24px */
+    background-color: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+}
+
+.total-price-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.25rem;
+    /* 20px */
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.checkout-button {
+    width: 100%;
+    background-color: #166534;
+    color: white;
+    border: none;
+    padding: 0.875rem;
+    /* 14px */
+    font-size: 1rem;
+    /* 16px */
+    font-weight: bold;
+    border-radius: 0.5rem;
+    /* 8px */
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.checkout-button:hover {
+    opacity: 0.9;
+}
+
+/* --- Empty Cart Message --- */
+.empty-cart-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem 1.25rem;
+    /* 40px 20px */
+    text-align: center;
+    color: #555;
+}
+
+.empty-cart-message .fa-cart-shopping {
+    font-size: 3.75rem;
+    /* 60px */
+    color: #d1d5db;
+    margin-bottom: 1.5rem;
+    /* 24px */
+}
+
+.empty-cart-message h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.25rem;
+    /* 20px */
+    color: #333;
+}
+
+.empty-cart-message p {
+    margin: 0;
+    font-size: 1rem;
+    /* 16px */
+}
+
+
+/* =================================================================== */
+/* ANIMATIONS & UTILITIES                                              */
+/* =================================================================== */
+
+.hidden {
+    display: none !important;
+}
+
+.zoom {
+    padding: 1.875rem;
+    /* 30px */
+    transition: transform .3s;
+    width: 6.25rem;
+    /* 100px */
+    height: 6.25rem;
+    margin: 0 auto;
+}
+
+.zoom:hover {
+    transform: scale(1.2);
+    background-color: #a1b8a6;
+}
+
+/* =================================================================== */
+/* SKELETON LOADING STYLES (NEW)                                       */
+/* =================================================================== */
+
+@keyframes pulse {
+    50% {
+        background-color: #d1d5db;
+        /* Lighter gray for pulse effect */
+    }
+}
+
+.skeleton-card {
+    background-color: white;
+    border-radius: 1rem;
+    border: 1px solid #e5e7eb;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.skeleton-card>div {
+    background-color: #e5e7eb;
+    /* Base gray color for all skeleton elements */
+    border-radius: 0.25rem;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.skeleton-image {
+    height: 11.25rem;
+    margin-bottom: 1rem;
+}
+
+.skeleton-text {
+    height: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.skeleton-text.short {
+    width: 60%;
+    margin-bottom: 1rem;
+}
+
+.skeleton-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    background-color: transparent !important;
+    /* The footer is just a container */
+    animation: none !important;
+}
+
+.skeleton-tag {
+    width: 5rem;
+    height: 1.5rem;
+    border-radius: 999px;
+}
+
+.skeleton-price {
+    width: 3rem;
+    height: 1.25rem;
+}
+
+.skeleton-button {
+    width: 100%;
+    height: 2.75rem;
+    border-radius: 999px;
+}

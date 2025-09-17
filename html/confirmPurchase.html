@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Purchase - Green Earth</title>
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/device_responsive.css">
+    
+    <link rel="stylesheet" href="../css/confirmPurchase.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="sticky-footer-page">
+    <nav>
+        <div class="logo">
+            <a href="../index.html" style="text-decoration: none; color: white;"><h1>Green Earth</h1></a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="confirmation-container">
+            <div class="confirmation-box">
+                <div class="success-icon">
+                    <i class="fa-solid fa-check-circle"></i>
+                </div>
+                <h1>Purchase Confirmed!</h1>
+                <p class="confirmation-message">Your purchase has been confirmed and we are getting it ready.</p>
+                <p class="email-invoice-message">
+                    Order Invoice will be sent to your email: <strong id="user-email">your.email@example.com</strong>
+                </p>
+
+                <div class="order-summary">
+                    <h2>Order Summary</h2>
+                    <div id="summary-items-container">
+                        </div>
+                    <div class="summary-total">
+                        <span>Total</span>
+                        <span id="summary-total-amount">৳0</span>
+                    </div>
+                </div>
+
+                <a href="../index.html" class="continue-shopping-btn">Continue Shopping</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Green Earth. All Rights Reserved.</p>
+    </footer>
+
+    <script src="../js/confirmPurchase.js"></script>
+</body>
+</html>

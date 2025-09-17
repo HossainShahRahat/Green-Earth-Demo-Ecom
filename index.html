@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Earth</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/device_responsive.css">
+
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+    <div class="sidebar" id="sidebar">
+        <a href="javascript:void(0)" class="close-btn" id="close-btn">&times;</a>
+        <div class="sidebar-links">
+            <a href="#About-Campaign-Container">About</a>
+            <a href="#">Gallery</a>
+            <a href="#Plant-a-Tree-Today-Container">Plant a Tree</a>
+            <a href="#" id="sidebar-cart-btn">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span>Cart</span>
+            </a>
+        </div>
+    </div>
+
+    <nav>
+        <div class="logo">
+            <h1>Green Earth</h1>
+        </div>
+
+        <div class="nav-links">
+            <a href="#About-Campaign-Container">About</a>
+            <a href="#">Gallery</a>
+            <a href="#Plant-a-Tree-Today-Container">Plant a Tree</a>
+        </div>
+
+        <div id="nav-cart" class="cart-icon-container">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <div id="cart-count-badge" class="hidden">0</div>
+        </div>
+
+        <div class="hamburger-menu" id="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <header>
+        <div class="banner">
+            <div class="banner-left-image">
+                <img src="assets/hero-leaf1.png" alt="Decorative leaf illustration">
+            </div>
+            <div class="banner-content">
+                <h1>Plant a Tree, Grow a Future</h1>
+                <p>Join our mission to plant 1 million trees and make the Earth greener for future<br> generations.</p>
+                <div class="button-type-1">
+                    <button>Get Involved</button>
+                </div>
+            </div>
+            <div class="banner-right-image">
+                <img src="assets/hero-leaf2.png" alt="Decorative leaf illustration">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h1 class="Trees-Section-Headline" style="text-align: center;">Choose Your Trees</h1>
+            <div class="Choose-Your-Trees-Section">
+                <div class="Tree-Section-Container-Left">
+                    <h2>Categories</h2>
+                    <ul id="category-list">
+                        <li id="all-tree">All Trees</li>
+                    </ul>
+                </div>
+                <div class="Tree-Section-Container-Body" id="card-container">
+                </div>
+            </div>
+        </section>
+
+        <section id="About-Campaign-Container">
+            <h1 style="text-align: center;">About the Campaign</h1>
+            <div class="About-Campaign ">
+                <div class="About-Campaign-Container-left ">
+                    <img src="assets/about.png" alt="Illustration of people planting a tree">
+                </div>
+                <div class="About-Campaign-Container-Right ">
+                    <p>Green Earth is a global tree plantation initiative dedicated to fighting<br>climate change. Since
+                        our start, we’ve planted over 500,000 trees<br>worldwide. By joining our campaign, you help
+                        restore forests, create<br>habitats for wildlife,
+                        and combat global warming.</p>
+                    <ul>
+                        <li>Restoration of natural habitats</li>
+                        <li>Improvement of air quality</li>
+                        <li>Support for local communities</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="Our-Impact-Section">
+            <h1>Our Impact</h1>
+            <div class="Our-Impact-Container">
+                <div class="Our-Impact-Box">
+                    <h2 class="counter" data-target="500000">0</h2>
+                    <p>Trees Planted</p>
+                </div>
+                <div class="Our-Impact-Box">
+                    <h2 class="counter" data-target="120">0</h2>
+                    <p>Communities Involved</p>
+                </div>
+                <div class="Our-Impact-Box">
+                    <h2 class="counter" data-target="30">0</h2>
+                    <p>Countries Reached</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="Plant-a-Tree-Today-Container">
+            <div class="Plant-a-Tree-Today-Section ">
+                <h1 style="text-align: center; padding-bottom: 1rem; color: white;">Plant a Tree Today</h1>
+                <form action=" " class="Plant-a-Tree-Today-Form ">
+                    <input type="text" placeholder="Your Name " required>
+                    <input type="email" placeholder="Your Email Address " required>
+                    <select name="Number-of-Trees" id="Number-of-Trees" required>
+                        <option value="" disabled selected>Number of Trees</option>
+                        <option value="1">1 Tree - $5</option>
+                        <option value="5">5 Trees - $25</option>
+                        <option value="10">10 Trees - $50</option>
+                    </select>
+                    <button type="submit">Donate Now</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Green Earth. All Rights Reserved.</p>
+    </footer>
+
+    <div id="plant-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div id="modal-body">
+            </div>
+        </div>
+    </div>
+
+    <div id="cart-modal" class="modal">
+        <div class="cart-modal-content">
+            <div class="cart-modal-header">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <h2>Shopping Cart</h2>
+                <span id="close-cart-button" class="close-button">&times;</span>
+            </div>
+            <div id="cart-modal-body" class="cart-modal-body">
+            </div>
+            <div class="cart-modal-footer">
+                <div class="total-price-container">
+                    <span>Total:</span>
+                    <span id="cart-modal-total">৳0</span>
+                </div>
+                <a href="html/checkout.html" style="text-decoration: none;">
+                    <button class="checkout-button">Proceed to Checkout</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

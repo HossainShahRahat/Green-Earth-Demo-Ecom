@@ -1,0 +1,214 @@
+/* =================================================================== */
+/* TABLET & IPAD STYLES (Screen sizes up to 1199px)                    */
+/* =================================================================== */
+
+@media (max-width: 1199px) {
+    .Choose-Your-Trees-Section {
+        padding: 1.5rem;
+    }
+
+    .Tree-Section-Container-Body {
+        grid-template-columns: repeat(3, 1fr); /* 3 cards for tablets */
+    }
+
+    .Our-Impact-Container {
+        padding: 0 1.5rem;
+    }
+}
+
+
+/* =================================================================== */
+/* SMALLER TABLET STYLES (Screen sizes up to 991px)                    */
+/* =================================================================== */
+
+@media (max-width: 991px) {
+    /* Hide Desktop Links & Cart Icon */
+    nav .nav-links,
+    nav #nav-cart {
+        display: none;
+    }
+
+    /* Show and Style Hamburger Menu */
+    .hamburger-menu {
+        display: block;
+        cursor: pointer;
+        z-index: 1100;
+    }
+
+    .hamburger-menu span {
+        display: block;
+        width: 28px;
+        height: 3px;
+        margin: 6px 0;
+        background: white;
+        transition: 0.4s;
+    }
+
+    /* Sidebar Styles */
+    .sidebar {
+        height: 100%;
+        width: 280px;
+        position: fixed;
+        top: 0;
+        right: -280px; /* Start off-screen */
+        background-color: #ffffff;
+        box-shadow: -4px 0 15px rgba(0,0,0,0.1);
+        padding-top: 4rem;
+        transition: right 0.3s ease-in-out;
+        z-index: 2000;
+    }
+
+    .sidebar.open {
+        right: 0; /* Slide in */
+    }
+
+    .sidebar .sidebar-links {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sidebar a {
+        padding: 1rem 2rem;
+        text-decoration: none;
+        font-size: 1.2rem;
+        color: #111827;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        transition: background-color 0.2s;
+    }
+
+    .sidebar a:hover {
+        background-color: #f0fdf4;
+    }
+    
+    .sidebar .close-btn {
+        position: absolute;
+        top: 0.5rem;
+        right: 1.5rem;
+        font-size: 2.5rem;
+        color: #6b7280;
+    }
+
+    /* Layout Adjustments */
+    .banner-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .banner-content .button-type-1 {
+        margin-bottom: 2rem;
+    }
+
+    .banner-left-image, .banner-right-image {
+        display: none;
+    }
+    
+    .Choose-Your-Trees-Section {
+        flex-direction: column;
+    }
+
+    .Tree-Section-Container-Left {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .Tree-Section-Container-Left ul {
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 1rem;
+    }
+    
+    .Tree-Section-Container-Left li {
+        flex-shrink: 0;
+    }
+    
+    .Tree-Section-Container-Body {
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+    }
+
+    .About-Campaign {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .Plant-a-Tree-Today-Form {
+        width: 90%;
+        padding: 2rem;
+    }
+}
+
+
+/* =================================================================== */
+/* DESKTOP STYLES (992px and up)                                       */
+/* =================================================================== */
+
+@media (min-width: 992px) {
+    /* Hide Hamburger and Sidebar on Desktop */
+    .hamburger-menu,
+    .sidebar {
+        display: none;
+    }
+}
+
+
+/* =================================================================== */
+/* MOBILE PHONE STYLES (up to 767px)                                   */
+/* =================================================================== */
+
+@media (max-width: 767px) {
+    nav {
+        flex-direction: row;
+        justify-content: space-between; 
+        align-items: center;
+        padding: 1rem;
+        /* FIX: Ensure nav takes full width */
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .banner {
+        padding: 2rem 1rem 0;
+    }
+
+    .banner-content h1 {
+        font-size: 2rem;
+    }
+    
+    .banner-content p {
+        font-size: 0.9rem;
+    }
+
+    .Trees-Section-Headline, .Our-Impact-Section h1 {
+        font-size: 1.8rem;
+    }
+    
+    .Tree-Section-Container-Body {
+        grid-template-columns: 1fr;
+    }
+
+    .Our-Impact-Container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .Our-Impact-Box {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .Our-Impact-Box h2 {
+        font-size: 2rem;
+    }
+
+    .Plant-a-Tree-Today-Form {
+        width: 100%;
+        max-width: 400px;
+        padding: 1.5rem;
+    }
+
+    .Plant-a-Tree-Today-Section h1 {
+        font-size: 1.8rem;
+    }
+}
