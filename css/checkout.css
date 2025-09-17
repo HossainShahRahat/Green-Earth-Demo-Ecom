@@ -2,7 +2,6 @@
 /* CHECKOUT PAGE STYLES                                                */
 /* =================================================================== */
 
-/* NEW: Rule to align the logo to the left on the checkout page */
 nav {
     justify-content: flex-start;
     padding: 0 2rem;
@@ -18,27 +17,31 @@ nav {
     align-items: flex-start;
 }
 
-.checkout-form {
+.checkout-form, .order-summary {
     flex: 1;
     min-width: 300px;
-    /* NEW: Use flexbox and gap for consistent spacing between form sections */
+}
+
+.form-section {
+    background-color: #ffffff;
+    padding: 2.5rem;
+    padding-right: 3.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+/* Use gap for spacing between form sections instead of margin */
+.checkout-form {
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
 
 .order-summary {
-    flex: 1;
-    min-width: 300px;
-}
-
-.form-section, .order-summary {
     background-color: #ffffff;
     padding: 2.5rem; 
-    padding-right: 3.5rem;
     border-radius: 1rem;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    /* REMOVED: margin-bottom is now handled by the parent's gap property */
 }
 
 .form-section h2, .order-summary h2 {
@@ -51,6 +54,10 @@ nav {
 
 .form-group {
     margin-bottom: 1rem;
+}
+
+.form-group:last-child {
+    margin-bottom: 0;
 }
 
 .form-group label {
@@ -68,6 +75,64 @@ nav {
     font-size: 1rem;
 }
 
+/* --- Integrated Card Form Styles --- */
+#payment-form .form-section h2 {
+    border: none;
+    padding-bottom: 0;
+    margin-bottom: 1rem;
+}
+
+.card-input-container {
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.card-input-container input,
+.card-name-container input {
+    border: none;
+    outline: none;
+    padding: 0.85rem;
+    font-size: 1rem;
+    width: 100%;
+    background: transparent;
+}
+
+.card-number-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.card-icon-container {
+    position: absolute;
+    right: 1rem;
+    font-size: 1.5rem;
+    color: #9ca3af;
+}
+
+.card-details-row {
+    display: flex;
+    border-top: 1px solid #ccc;
+}
+
+.card-expiry-group, .card-cvc-group {
+    flex: 1;
+    display: flex;
+}
+
+.card-cvc-group {
+    border-left: 1px solid #ccc;
+}
+
+.card-name-container {
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+/* --- Button & Summary Styles --- */
 .place-order-btn {
     width: 100%;
     background-color: var(--primary-green, #166534);

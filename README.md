@@ -1,185 +1,85 @@
-**1. What is the difference between var, let, and const?**<br>
-	These are all ways to declare variables, but they have different rules about scope and reassigning values.
-	var: The old way. It's function-scoped, meaning it's only confined to the function it was declared in. You can update and re-declare it, which can sometimes lead to bugs. It's generally best to avoid var.
-	let: The new, preferred way for variables that will change. It's block-scoped ({}), meaning it's only available within the block it's defined in. You can update its value, but you can't re-declare it in the same scope.
-	const: Used for variables that should not change. It's also block-scoped. You must assign it a value when you declare it, and you cannot reassign it later.
+Of course. Here is a comprehensive `README.md` file that documents your "Green Earth" project.
 
-**2. What is the difference between map(), forEach(), and filter()?**<br>
-	All three are array methods that loop over an array, but they do different things.
-	forEach(): Simply executes a function once for each element in an array. It doesn't return anything. Think of it as a basic loop for when you just want to do something with each item, like logging it.
-	map(): Creates a new array by transforming every element in the original array. The new array will always have the same length as the original. It's perfect for when you want to change each item into something else.
-	filter(): Creates a new array with only the elements that pass a test you provide. The new array can be shorter than the original. It's great for selecting a subset of data.
+You can create a new file named `README.md` in the root of your project folder and paste the content below into it.
 
-**3. What are arrow functions in ES6?**<br>
-	Arrow functions are a shorter way to write function expressions. The main difference is that they don't have their own this keyword; they inherit it from the parent scope. This behavior helps avoid common bugs 		related to this inside callbacks.
+-----
 
-**4. How does destructuring assignment work in ES6?**<br>
-	Destructuring is a shortcut for unpacking values from objects or arrays into their own variables. It makes your code cleaner and easier to read by avoiding repetitive dot or bracket notation. For example, you can pull 	properties like firstName and lastName from a person object directly into variables with the same names.
+# Green Earth E-Commerce Platform
 
-**5. Explain template literals in ES6.**<br>
-	Template literals are an easier way to create strings, especially complex ones. You use backticks (`) instead of single or double quotes.
-	They are better than traditional string concatenation (+) for two main reasons:
-	Embedded Expressions: You can easily embed variables and expressions directly into the string using the ${...} syntax.
-	Multi-line Strings: You can create multi-line strings without needing to use the newline character (\n).
+Welcome to the Green Earth project, a modern, fully responsive e-commerce front-end for a fictional plant nursery. This project allows users to browse different types of trees, add them to a shopping cart, and proceed through a checkout and confirmation flow. It is built with vanilla HTML, CSS, and JavaScript, focusing on a clean user interface and a great mobile-first experience.
 
+## ✨ Features
 
+  - **Dynamic Product Loading**: All plant and category data is fetched dynamically from a public API.
+  - **Product Filtering**: Users can filter the displayed trees by selecting a category.
+  - **Skeleton Loading Screen**: A modern skeleton screen is shown while products are being fetched, providing a better user experience than a simple spinner.
+  - **Responsive Design**: The entire application is fully responsive and optimized for a seamless experience on desktop, tablet, and mobile devices.
+  - **Mobile Navigation**: Includes a touch-friendly, slide-in sidebar navigation for mobile users.
+  - **Interactive Shopping Cart**: A modal-based shopping cart allows users to view, adjust quantities, and remove items.
+  - **Session Persistence**: The shopping cart state is saved in `sessionStorage`, allowing data to persist between the main shop and checkout pages.
+  - **Multi-Step Checkout Process**:
+      - **Checkout Form**: A dedicated page for users to enter their shipping and payment information.
+      - **Form Validation**: Client-side validation ensures all required fields are filled before an order can be placed.
+      - **Confirmation Page**: A "Thank You" page that displays a summary of the final order.
+  - **Custom Notifications**: Uses modern toast notifications instead of default browser alerts for adding items to the cart.
+  - **Animated Counters**: The "Our Impact" section features numbers that animate on scroll, counting up to the target value.
 
+## 🚀 Tech Stack
 
-## WELCOME TO ( সহজ সরল সিম্পল ) ASSIGNMENT-006
+  - **HTML5**: For the core structure and content.
+  - **CSS3**: For all styling, including Flexbox, CSS Grid, custom properties, and animations.
+  - **JavaScript (ES6+)**: For all dynamic functionality, including API calls, DOM manipulation, and state management.
 
-### 📅 Deadline For 60 marks: 9th September, 2025 (11:59 pm ⏱️)
+## 📁 Project Structure
 
-### 📅 Deadline For 50 marks : 13th September , 2025 (6:00 pm⏱️)
+The project is organized into the following directories and files:
 
-### 📅 Deadline For 30 marks: Any time after 13the September , 2025 (6:01 pm⏱️).
-
----
-🌴 API Endpoints
----
-1. Get 🌴All Plants
-```bash
-https://openapi.programming-hero.com/api/plants
+```
+/
+|-- index.html              # Main landing and shopping page
+|-- css/
+|   |-- style.css           # Base styles (desktop-first) and modern UI components
+|   |-- device_responsive.css # Media queries for tablet and mobile responsiveness
+|   |-- checkout.css        # Styles specific to the checkout page
+|   |-- confirmPurchase.css # Styles specific to the order confirmation page
+|-- js/
+|   |-- script.js           # Main script for index.html (API calls, cart logic, UI events)
+|   |-- checkout.js         # Script for the checkout page (form validation, summary)
+|   |-- confirmPurchase.js  # Script for the confirmation page (displaying final order)
+|-- html/
+|   |-- checkout.html       # The checkout and payment form page
+|   |-- confirmPurchase.html # The final "thank you" and order summary page
+|-- assets/
+|   |-- (project images)    # Contains all static images like logos and banners
+|-- README.md               # This documentation file
 ```
 
-2. Get 🌴All categories <br/>
-```bash
-https://openapi.programming-hero.com/api/categories
-```
+## ⚙️ Setup and Installation
 
+To run this project locally, no special tools or builds are required.
 
-3. Get 🌴plants by categories <br/>
-```bash
-https://openapi.programming-hero.com/api/category/${id}
-```
+1.  Clone the repository or download the source code to your local machine.
+2.  Open the project folder in your code editor.
+3.  Open the **`index.html`** file in your web browser. A live server extension (like Live Server for VS Code) is recommended for the best experience.
 
-```bash
-https://openapi.programming-hero.com/api/category/1
-```
+## 💡 How It Works
 
-4. Get 🌴Plants Detail <br/>
+The project's interactivity is handled by three main JavaScript files:
 
-```bash
-https://openapi.programming-hero.com/api/plant/${id}
-```
+1.  **`script.js`**: This is the engine for the main `index.html` page.
 
-```bash
-https://openapi.programming-hero.com/api/plant/1
-```
----
+      - It fetches all plant and category data from the API on page load.
+      - It handles all user interactions like filtering categories, opening the plant details modal, and adding items to the cart.
+      - It manages the `cart` array and saves it to **`sessionStorage`** whenever it is modified. This is key to making the cart data available on other pages.
 
+2.  **`checkout.js`**: This script runs exclusively on `checkout.html`.
 
+      - It reads the cart data from `sessionStorage`.
+      - It dynamically builds the "Order Summary" based on the items found in the session.
+      - It adds an event listener to the "Place Order" button that performs form validation. On success, it saves the final order details and user email to the session and redirects to the confirmation page.
 
+3.  **`confirmPurchase.js`**: This script runs on the final confirmation page.
 
-## ✅ Main Requirements 
-
-#### 1) Navbar
-
-- Website **logo/name** on the **left**  
-- **Menu items** in the **center** 
-- **Plant a Tree button** on the **right** 
-
-#### 2) Banner 
-- A **background image**  
-- A **title** and **subtitle**  
-- A **centered button**  
-
-#### 3) About Campaign
-- **Section heading**  
-- **Image on the left**, **text on the right**  
-
-#### 4) Our Impact Section 
-- Show **3 cards** with campaign **statistics**  
-
-#### 5) Plant a Tree Today Section & Footer
-- **Form**: Name, Email, Number of Trees  
-- **Footer** with copyright info 
-
-#### 6) Responsiveness 
-- Website must be **mobile responsive**  
-
----
-#### 7) Create a README file to answer the following question-
-
-
-#### 1) What is the difference between var, let, and const?
-
-#### 2) What is the difference between map(), forEach(), and filter()? 
-
-#### 3) What are arrow functions in ES6?
-
-#### 4) How does destructuring assignment work in ES6?
-
-#### 5) Explain template literals in ES6. How are they different from string concatenation?
-
-## ⚙️ Functionalities 
-
-1) Category Loading 
-Load Tree Categories dynamically on the left side.
-
-2) Category Click → Tree Data 
-On clicking a category: load trees of that category.
-
-Display in a 3-column card layout.
-
-3) Card Contents 
- Each card includes:
-
-        - Image
-
-        -  Name
-
-        - Short description
-
-        - Category
-
-        - Price
-
-        - Add to Cart button
-
-4) Modal on Card Click 
-Clicking a tree name on a card opens a modal with full tree details.
-
-
-##  🧪 Challenges 
-
-
-    1) Add to Cart 
-    Clicking Add to Cart: - Adds the tree to Cart List
-                          - Shows tree name 
-
-    2) Total Calculation 
-    Calculate total price of trees in cart.
-
-    3) Remove from Cart 
-    Clicking ❌ removes tree and deducts price from total.
-
-    4) Loading Spinner
-    Show spinner while data is loading.
-
-    5) Active Button State 
-    Highlight active category button when selected.
-
-
-
-🧰 Technology Stack:
-        
-        HTML
-
-        CSS (Vanilla / Tailwind / DaisyUI)
-
-        JavaScript (Vanilla only, no frameworks)
-
-📌 Rules
-✅ At least 5 meaningful commits
-
-❌ No dummy text or Lorem Ipsum — must use relevant content
-
-
-
-
-
-## 🔗 Submission
-- **Live Link :** YOUR_DEPLOYED_URL_HERE  
-- **GitHub Private Repository:** YOUR_REPO_URL_HERE  
-
----
+      - It reads the final order details and user email from `sessionStorage`.
+      - It dynamically populates the order summary and confirmation message.
+      - It then clears the data from the session to ensure the order is not displayed again on a page refresh.
